@@ -2,4 +2,70 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+.container {
+  position: relative;
+}
+
+.clock {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background-color: rgb(70, 70, 70);
+  border: 2px solid rgb(194, 194, 194);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* how did the rotate work */
+/* what is relative vs absolute */
+/* what is before and after */
+.clock span {
+  position: absolute;
+  transform: rotate(calc(30deg * var(--i)));
+  inset: 12px;
+  text-align: center;
+}
+
+.clock span b {
+  transform: rotate(calc(-30deg * var(--i)));
+  /* why inline block */
+  display: inline-block;
+  font-size: 20px;
+}
+
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.hand {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hand i {
+  position: absolute;
+  background-color: var(--clr);
+  width: var(--w);
+  height: var(--h);
+  border-radius: 8px;
 }
